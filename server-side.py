@@ -6,11 +6,15 @@ ur = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 ROBOT_IP = '10.30.21.100'
 ROBOT_PORT = 30002
 
+DEBUG = True
+
 ur.connect((ROBOT_IP, ROBOT_PORT))
-print(f'Connected to UR robot at {ROBOT_IP}:{ROBOT_PORT}.')
+if DEBUG:
+    print(f'Connected to UR robot at {ROBOT_IP}:{ROBOT_PORT}.')
 
 def send_cmd(cmd):
-    print(f'Executing `{cmd}`')
+    if DEBUG:
+        print(f'Executing `{cmd}`')
     ur.send(f'{cmd}\n'.encode())
     ur.recv(1024)
 
