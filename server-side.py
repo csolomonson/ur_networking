@@ -25,5 +25,3 @@ if __name__ == '__main__':
     while s.lower() != 'q' and s.lower() != 'quit':
         send_cmd(s)
         s = input()
-
-#-247, -111, 147, 206, -90, 78
