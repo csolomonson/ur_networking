@@ -7,6 +7,7 @@ ROBOT_IP = '10.30.21.100'
 ROBOT_PORT = 30002
 
 ur.connect((ROBOT_IP, ROBOT_PORT))
+print(f'Connected to UR robot at {ROBOT_IP}:{ROBOT_PORT}.')
 
 def send_cmd(cmd):
     print(f'Executing `{cmd}`')
