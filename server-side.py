@@ -31,6 +31,13 @@ def movej_degrees(target, a=1.0, v=0.1):
         radians[i] = math.radians(degs)
     send_cmd(f'movej({radians}, a={a}, v={v})')
 
+def sock_connect():
+    '''
+    This runs by default when this module is imported. Run again if the connection drops (like if ur gets put in local mode)
+    '''
+    ur = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    ur.connect((ROBOT_IP, ROBOT_PORT))
+
 if __name__ == '__main__':
     s = input()
     while s.lower() != 'q' and s.lower() != 'quit':
